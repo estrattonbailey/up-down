@@ -1,0 +1,57 @@
+{
+  "name": "up-down",
+  "version": "0.0.1",
+  "description": "A quantity selector written in ES6.",
+  "main": "dist/up-down.js",
+  "scripts": {
+    "package": "mkdir dist ; browserify index.js --standalone up-down > dist/up-down.js"
+  },
+  "browserify": {
+    "debug": true,
+    "cache": {},
+    "packageCache": {},
+    "extension": [
+      "js"
+    ],
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015",
+            "react"
+          ]
+        }
+      ]
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/estrattonbailey/up-down.git"
+  },
+  "keywords": [
+    "quantity",
+    "counter",
+    "vanilla",
+    "es6",
+    "quantity selector"
+  ],
+  "author": "estrattonbailey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/estrattonbailey/up-down/issues"
+  },
+  "homepage": "https://github.com/estrattonbailey/up-down#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "minifyify": "^7.3.3",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "closest": "0.0.1",
+    "knot.js": "^1.1.1"
+  }
+}
