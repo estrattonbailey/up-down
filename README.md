@@ -1,6 +1,11 @@
 # up-down  [![npm](https://img.shields.io/npm/v/up-down.svg?maxAge=2592000)](https://www.npmjs.com/package/up-down)
 A quantity selector written in ES6.
 
+<img 
+  src="https://raw.githubusercontent.com/estrattonbailey/up-down/master/screenshot.png" 
+  width="300"
+  alt="up-down example image"/>
+
 ## Install 
 ```bash
 npm i up-down --save
