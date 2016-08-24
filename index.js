@@ -24,7 +24,7 @@ export default function(el){
     set value(val){
       val = typeof val === 'number' ? val : min;
       this.store.value = val
-      input.value = val
+      input.setAttribute('value', val)
       instance.value = val
     },
     get value(){
@@ -57,12 +57,19 @@ export default function(el){
     return _val;
   }
 
+  function triggerChange(){
+    let event = document.createEvent('UIEvents')
+    event.initUIEvent('change', true, true, window, 1);
+    input.dispatchEvent(event);
+  }
+
   function clickHandler(e){
     let target = closest(e.target, 'button', true)
+    if(!target) return
     let type = target.getAttribute('data-count')
     let val = type === '+' ? 1 : -1
-
     state.value = clamp(state.value + val)
+    triggerChange()
   }
 
   function changeHandler(e){
